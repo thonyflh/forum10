@@ -20,6 +20,9 @@
             <li class="nav-item">
                 <a href="/login" class="nav-link active">Login</a>
             </li>
+            <li class="nav-item">
+                <a href="/logout" class="nav-link active">Logout</a>
+            </li>
         </ul>
       </div>
     </div>

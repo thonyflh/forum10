@@ -44,7 +44,7 @@ class LoginController extends Controller
 
     protected function registerlogin($data){
         $user = User::where('email','=', $data->email)->first();
-        if($user){
+        if(!$user){
             $user = new User();
             $user->name = $data->name;
             $user->email = $data->email;
@@ -52,6 +52,13 @@ class LoginController extends Controller
             $user->save();
         }
         Auth::login($user);
+    }
+
+    public function logout(Request $request) {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/login');
     }
 
 }

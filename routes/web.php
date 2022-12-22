@@ -47,6 +47,8 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 
+Route::get('/logout', [LoginController::class, 'logout']);
+
 //login Google
 Route::get('/login/google', [LoginController::class, 'loginGoogle']);
 Route::get('/login/google/callback', [LoginController::class, 'handleGooglecallback']);
